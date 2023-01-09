@@ -11,7 +11,7 @@ def TAG_NAME = params.TAG_NAME
 // def Dockerhub_URL = params.Dockerhub_URL
 
 stage('Checkout') {
-  git credentialsId:'Github-Login', url: 'https://github.com/leenatejababu/Springbootapplication.git'  
+  git credentialsId:'Leena-Git', url: 'https://github.com/leenatejababu/Springbootapplication.git'  
  }
 
 
