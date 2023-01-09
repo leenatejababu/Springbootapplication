@@ -35,7 +35,7 @@ stage('Build Image'){
 }
  
  stage('deploy to kubernetes'){
-kubeconfig(credentialsId: 'kubefile', serverUrl: '') {
+kubeconfig(credentialsId: 'kube-cont', serverUrl: '') {
 
     sh """
      kubectl cluster-info
