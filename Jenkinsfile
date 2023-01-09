@@ -35,7 +35,7 @@ stage('Build Image'){
 }
  
  stage('deploy to kubernetes'){
- withCredentials([file(credentialsId: 'kubefile', variable: 'kubefile')]) {
+withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubeconfig', namespace: '', serverUrl: '') {
 
     sh """
      kubectl cluster-info
