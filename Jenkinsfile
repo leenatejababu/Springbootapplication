@@ -30,7 +30,7 @@ stage('Build Image'){
         docker build -t springboot:1.0.0 .
         docker tag springboot:1.0.0 leenatejababu/springboot:1.0.0
         docker login -u leenatejababu -p ltb@11041986 
-        docker push springboot:1.0.0 leenatejababu/springboot:1.0.0  
+        docker push leenatejababu/springboot:1.0.0  
        """
 }
 }
