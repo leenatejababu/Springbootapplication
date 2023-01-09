@@ -26,7 +26,7 @@ stage('Build') {
 
 stage('Build Image'){
     sh  """ 
-        usermod -aG docker jenkins
+        sudo usermod -aG docker jenkins
         docker version
         docker build -t springboot:1.0.0 .
         docker tag springboot:1.0.0 leenatejababu/springboot:1.0.0
