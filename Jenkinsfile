@@ -35,7 +35,8 @@ stage('Build Image'){
 }
  
  stage('deploy to kubernetes'){
-  withCredentials([string(credentialsId: 'KUBECONFIG', variable: 'k8s')]) {
+ withCredentials([file(credentialsId: 'kubefile', variable: 'kubefile')]) {
+
     sh """
      kubectl cluster-info
      kubectl get po
