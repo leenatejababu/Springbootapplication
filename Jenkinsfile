@@ -36,7 +36,10 @@ stage('Build Image'){
  
  stage('deploy to kubernetes'){
   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubeconfig', namespace: '', serverUrl: '') {
-    sh "kubectl get po"
+    sh """
+     kubectl cluster-info
+     kubectl get po
+     """
  }
  }
 }
