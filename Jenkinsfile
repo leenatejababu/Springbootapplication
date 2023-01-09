@@ -33,4 +33,10 @@ stage('Build Image'){
         docker push leenatejababu/springboot:1.0.0  
        """
 }
+ 
+ stage('deploy to kubernetes'){
+  withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubeconfig', namespace: '', serverUrl: '') {
+    sh "kubectl get po"
+ }
+ }
 }
