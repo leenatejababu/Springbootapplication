@@ -11,15 +11,15 @@ def TAG_NAME = params.TAG_NAME
 // def Dockerhub_URL = params.Dockerhub_URL
 
 stage('Checkout') {
-  git credentialsId:'Github-Login', url: 'https://github.com/leenatejababu/ADOK8'  
+  git credentialsId:'Github-Login', url: 'https://github.com/leenatejababu/Springbootapplication.git'  
  }
 
 
 stage('Build') {
-    withMaven(jdk: 'java', maven: 'maven') {
+    withMaven(jdk: 'JAVA', maven: 'maven') {
         
         println "build is running"
-        sh 'mvn -f pom.xml clean package -Dmaven.test.skip=true'
+        sh 'mvn clean package'
     }
 }
 
