@@ -40,6 +40,7 @@ kubeconfig(credentialsId: 'kubefile', serverUrl: '') {
     sh """
      kubectl cluster-info
      kubectl get po
+     helm upgrade --install springboot-app springboot  --set image.repository=leenatejababu/springboot --set image.tag=1.0.0
      """
  }
  }
